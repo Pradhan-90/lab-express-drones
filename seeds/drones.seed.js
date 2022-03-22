@@ -4,7 +4,7 @@ const Drone = require("../models/Drone.model");
 
 const MONGO_URI =
   process.env.MONGODB_URI || "mongodb://localhost/lab-express-drones";
-
+//connect database
 mongoose
   .connect(MONGO_URI)
   .then((x) => {
@@ -27,4 +27,4 @@ Drone.create(drones)
     console.log(`created ${dronesFromDB.length} drones`);
     mongoose.connection.close();
   })
-  .catch((err) => console.log(`An eroor occured ${err}`));
+  .catch((err) => console.log(`An error occured ${err}`));
